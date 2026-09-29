@@ -8,9 +8,10 @@ from __future__ import annotations
 
 import json
 from functools import lru_cache
+from typing import Annotated
 
 from pydantic import field_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -36,8 +37,10 @@ class Settings(BaseSettings):
     # Rate limiting
     RATE_LIMIT_PER_MIN: int = 60
 
-    # CORS (comma-separated or JSON list)
-    CORS_ORIGINS: list[str] = []
+    # CORS (comma-separated or JSON list). NoDecode: pass the raw string to the
+    # validator below instead of letting pydantic-settings JSON-decode it first
+    # (an empty env value is not valid JSON and would crash startup).
+    CORS_ORIGINS: Annotated[list[str], NoDecode] = []
 
     # Documents
     MAX_UPLOAD_MB: int = 25
