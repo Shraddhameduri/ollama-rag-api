@@ -26,17 +26,17 @@ metrics, and Docker Compose deployment.
 
 ```mermaid
 flowchart LR
-    Client -->|X-API-Key| MW[Middleware\nrequest-id · access log · CORS]
+    Client -->|X-API-Key| MW[Middleware<br/>request-id · access log · CORS]
     MW --> Chat[POST /v1/chat/completions]
     MW --> Docs[POST /v1/documents]
-    MW --> Ops[/health · /ready · /metrics]
+    MW --> Ops["/health · /ready · /metrics"]
 
     Chat --> MEM[(Session memory)]
-    Chat -->|embed query| EMB[Ollama\nembeddings]
-    EMB --> VEC[(ChromaDB\nvector store)]
+    Chat -->|embed query| EMB[Ollama<br/>embeddings]
+    EMB --> VEC[(ChromaDB<br/>vector store)]
     VEC -->|top-k chunks| Chat
     Docs -->|chunk + embed| VEC
-    Chat -->|prompt + history| LLM[Ollama\nchat model]
+    Chat -->|prompt + history| LLM[Ollama<br/>chat model]
     LLM -->|SSE / JSON| Client
 ```
 
