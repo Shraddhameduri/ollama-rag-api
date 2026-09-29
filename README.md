@@ -238,10 +238,6 @@ make eval    # RAG smoke eval (needs Ollama running with models pulled)
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## License
-
-MIT — see [LICENSE](LICENSE).
-
 ## Troubleshooting
 
 - **`httpx.InvalidURL: Invalid port` on startup**: your `no_proxy`/`NO_PROXY`
