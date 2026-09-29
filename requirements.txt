@@ -1,0 +1,14 @@
+# Pinned runtime + dev dependencies (verified together on Python 3.11/3.12).
+fastapi==0.141.1
+uvicorn[standard]==0.54.0
+pydantic-settings==2.15.0
+ollama==0.6.2
+chromadb==1.5.9
+pypdf==6.19.0
+slowapi==0.1.10
+prometheus_client==0.26.0
+python-multipart==0.0.32
+# Dev / CI
+pytest==9.1.1
+httpx==0.28.1
+ruff==0.16.9

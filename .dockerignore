@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+.env
+data
+tests
+examples
+README.md
+CONTRIBUTING.md
+.gitignore
+docker-compose.yml
+Makefile
